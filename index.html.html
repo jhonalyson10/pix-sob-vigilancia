@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PIX SOB VIGILÂNCIA</title>
+  <meta name="description" content="Guia prático: mito vs realidade no Pix e como se organizar com segurança. Acesso imediato por R$19,90." />
+
+  <style>
+    :root{
+      --bg0:#05070c;
+      --bg1:#071226;
+      --card: rgba(10,16,32,.62);
+      --line: rgba(255,255,255,.08);
+      --text:#f1f5ff;
+      --muted:#b7c3da;
+      --muted2:#94a3bf;
+      --accent:#4FC3F7;
+      --accent2:#00ffae;
+      --danger:#C62828;
+      --radius:18px;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 12%, rgba(79,195,247,.18), transparent 60%),
+        radial-gradient(900px 520px at 78% 18%, rgba(0,255,174,.10), transparent 55%),
+        radial-gradient(900px 520px at 50% 85%, rgba(198,40,40,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 60%, #040812);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .hero{
+      padding:56px 0 30px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.55) 70%, rgba(0,0,0,.0));
+      pointer-events:none;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.28);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .dot{
+      width:7px; height:7px; border-radius:99px;
+      background: var(--accent2);
+      box-shadow: 0 0 18px rgba(0,255,174,.55);
+    }
+    h1{
+      margin:18px 0 10px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    @media(max-width:520px){ h1{font-size:34px} }
+    .sub{
+      margin:0 0 18px;
+      max-width: 62ch;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.5;
+    }
+    .sub b{color:var(--text)}
+    .glass{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+      margin-top:16px;
+    }
+    @media(max-width:880px){ .grid{grid-template-columns:1fr} }
+
+    .box{ padding:18px; }
+    .box h2{ margin:0 0 10px; font-size:20px; letter-spacing:-.01em; }
+    .box p{ margin:0; color:var(--muted); font-size:15.5px; }
+    ul{margin:12px 0 0; padding-left:18px; color:var(--muted); }
+    li{margin:7px 0}
+
+    .price{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-top:8px;
+    }
+    .price .val{
+      font-size:42px;
+      font-weight:900;
+      letter-spacing:-.03em;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .price small{ color:var(--muted2); font-size:12px; text-align:right; line-height:1.3; }
+
+    .btn{
+      display:block;
+      width:100%;
+      margin-top:14px;
+      padding:16px 16px;
+      border-radius: 14px;
+      text-align:center;
+      font-weight:900;
+      color:#041012;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      box-shadow: 0 16px 40px rgba(79,195,247,.15);
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{transform:translateY(1px)}
+
+    .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .pill{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      color:var(--muted);
+    }
+
+    section{padding:28px 0}
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media(max-width:880px){ .two{grid-template-columns:1fr} }
+
+    .divider{height:1px; background: var(--line); margin:16px 0}
+
+    .final{
+      padding:34px 0 50px;
+    }
+    .center{ text-align:center }
+    .small{ color:var(--muted2); font-size:12px; margin-top:10px }
+    .warn{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:14px; border-radius:14px;
+      border:1px solid rgba(198,40,40,.28);
+      background: rgba(198,40,40,.08);
+      color:var(--muted);
+    }
+    .ok{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:14px; border-radius:14px;
+      border:1px solid rgba(0,255,174,.22);
+      background: rgba(0,255,174,.06);
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span> Guia prático • sem terrorismo • 100% legal</span>
+
+      <h1>PIX SOB VIGILÂNCIA</h1>
+
+      <p class="sub">
+        Estão espalhando medo e desinformação sobre o Pix.
+        <br><br>
+        Algumas coisas <b>mudaram</b>. Outras são <b>boatos</b>.
+        Aqui você entende o que é mito, o que é realidade e como se organizar para usar Pix com tranquilidade.
+      </p>
+
+      <div class="grid">
+        <div class="glass box">
+          <h2>Você vai sair daqui com clareza</h2>
+          <ul>
+            <li>O que realmente chama atenção (na prática)</li>
+            <li>O que NÃO costuma dar problema</li>
+            <li>Como evitar erros comuns que geram ruído</li>
+            <li>Como usar Pix com organização mínima</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="warn">
+            <div>⚠️</div>
+            <div><b style="color:var(--text)">Importante:</b> este material não ensina fraude/jeitinho. É organização e segurança.</div>
+          </div>
+        </div>
+
+        <div class="glass box">
+          <h2>Acesso imediato</h2>
+          <p>Leitura rápida. Direto ao ponto. Ideal para quem quer entender sem perder tempo.</p>
+
+          <div class="price">
+            <div class="val">R$ 19,90</div>
+            <small>
+              pagamento seguro<br>
+              download imediato
+            </small>
+          </div>
+
+          <a class="btn" href="https://pay.cakto.com.br/32omdvo_737423" target="_blank" rel="noopener">
+            ACESSAR O GUIA AGORA
+          </a>
+
+          <div class="pills">
+            <span class="pill">Acesso imediato</span>
+            <span class="pill">PDF direto ao ponto</span>
+            <span class="pill">Leitura rápida</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section>
+      <div class="two">
+        <div class="glass box">
+          <h2>O que você vai entender</h2>
+          <ul>
+            <li>O que mudou e o que é boato</li>
+            <li>O que chama atenção de verdade</li>
+            <li>Como criar padrão e clareza nas entradas</li>
+            <li>O que fazer em caso de bloqueio + golpes comuns</li>
+          </ul>
+        </div>
+
+        <div class="glass box">
+          <h2>Para quem é (e para quem não é)</h2>
+          <div class="ok">
+            <div>✅</div>
+            <div><b style="color:var(--text)">É para você</b> se usa Pix no dia a dia e quer tranquilidade.</div>
+          </div>
+          <div style="height:10px"></div>
+          <div class="warn">
+            <div>❌</div>
+            <div><b style="color:var(--text)">Não é</b> para quem procura burlar regras ou “jeitinho”.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="glass box center">
+        <h2>Use Pix com tranquilidade</h2>
+        <p>Informação protege. Desinformação custa caro.</p>
+
+        <a class="btn" href="https://pay.cakto.com.br/32omdvo_737423" target="_blank" rel="noopener" style="max-width:520px; margin:16px auto 0;">
+          QUERO ACESSO IMEDIATO (R$19,90)
+        </a>
+
+        <div class="small">Conteúdo digital • Sem mensalidade • Acesso imediato após pagamento</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
